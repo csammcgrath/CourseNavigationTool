@@ -8,7 +8,6 @@ go through each course and get to the online classroom's website much faster.
 The current style can be found here:
 
 A huge thanks to:
-- Zach Williams for developing the front-end part of the website and helping me re-write the JavaScript code to be more
-robust and work more efficiently.
+- Zach Williams for developing the front-end part of the website!
 - IT Department at BYU-Idaho for developing a web-scraping tool that allowed us to scrape web URLs and export the results
 into a CSV file.
