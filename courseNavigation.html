@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+
+<head>
+    <meta name="viewport" charset="UTF-8" http-equiv="X-UA-Compatible">
+    <title>
+        Course Navigation
+    </title>
+
+    <!-- Script Files -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="papaparse.min.js"></script>
+    <script type="text/javascript" src="navigation.js"></script>
+    <script type="text/javascript" src="settings.js"></script>
+    <script type="text/javascript" src="infoFactory.js"></script>
+    <script type="text/javascript" src="startup.js"></script>
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="https://www.w3schools.com/lib/w3.css">
+    <link rel="stylesheet" href="navstyle.css">
+
+</head>
+
+<body>
+
+    <!--                                               -->
+    <!-- ~~~~~~~~~~~~~~~ TITLE/NAV BAR ~~~~~~~~~~~~~~~ -->
+    <!--                                               -->
+
+    <div class="w3-container nav-bar">
+        <div class="w3-display-container centered" style="height:100%;">
+            <img alt="BYUI Logo" height="50px" width="83px" class="w3-display-left logo" src="BYU-Idaho-Text-White.svg">
+
+            <div class="title w3-display-left">
+                Course Navigation
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Page Body -->
+    <div id="btn-master" class="centered">
+
+        <!--                                            -->
+        <!-- ~~~~~~~~~~~~~~~ SEARCH BAR ~~~~~~~~~~~~~~~ -->
+        <!--                                            -->
+
+        <div class="board full" id="searchContainer">
+
+            <div id="searchPane" class="pane full search-container">
+                <input placeholder="Enter course code..." onkeyup="courseSearch(this.value);" autocomplete="on" class="search-bar">
+
+                </input>
+
+                <!-- Button that changes dynamically as user is searching -->
+                <div id="search-online" class="search-course-btn btn-online" onclick="showSidenav(this)">
+                    Online
+                </div>
+                <div id="search-pathway" class="search-course-btn btn-pathway" onclick="showSidenav(this)">
+                    Pathway
+                </div>
+                <div id="search-campus" class="search-course-btn btn-campus" onclick="showSidenav(this)">
+                    Campus
+                </div>
+
+                <!-- Button that opens reference based on user search -->
+                <div id="search-reference" class="btn-y" onclick="showSettings()">
+                    Settings
+                </div>
+
+            </div>
+        </div>
+
+        <div id="filler">
+        </div>
+
+        <!--                                                 -->
+        <!-- ~~~~~~~~~~~~~~~ QUICK-NAV LINKS ~~~~~~~~~~~~~~~ -->
+        <!--                                                 -->
+
+        <div id="quick-nav" style="visibility:hidden;">
+            <div class="btn-quick-nav" onclick="giveCategories(this.innerHTML)">A</div>
+            <div class="btn-quick-nav" onclick="giveCategories(this.innerHTML)">B</div>
+            <div class="btn-quick-nav" onclick="giveCategories(this.innerHTML)">C</div>
+            <div class="btn-quick-nav" onclick="giveCategories(this.innerHTML)">D</div>
+            <div class="btn-quick-nav" onclick="giveCategories(this.innerHTML)">E</div>
+            <div class="btn-quick-nav" onclick="giveCategories(this.innerHTML)">F</div>
+            <div class="btn-quick-nav" onclick="giveCategories(this.innerHTML)">G</div>
+            <div class="btn-quick-nav" onclick="giveCategories(this.innerHTML)">H</div>
+            <div class="btn-quick-nav" onclick="giveCategories(this.innerHTML)">I</div>
+            <div class="btn-quick-nav" onclick="giveCategories(this.innerHTML)">J</div>
+            <div class="btn-quick-nav" onclick="giveCategories(this.innerHTML)">K</div>
+            <div class="btn-quick-nav" onclick="giveCategories(this.innerHTML)">L</div>
+            <div class="btn-quick-nav" onclick="giveCategories(this.innerHTML)">M</div>
+            <div class="btn-quick-nav" onclick="giveCategories(this.innerHTML)">N</div>
+            <div class="btn-quick-nav" onclick="giveCategories(this.innerHTML)">O</div>
+            <div class="btn-quick-nav" onclick="giveCategories(this.innerHTML)">P</div>
+            <div class="btn-quick-nav" onclick="giveCategories(this.innerHTML)">Q</div>
+            <div class="btn-quick-nav" onclick="giveCategories(this.innerHTML)">R</div>
+            <div class="btn-quick-nav" onclick="giveCategories(this.innerHTML)">S</div>
+            <div class="btn-quick-nav" onclick="giveCategories(this.innerHTML)">T</div>
+            <div class="btn-quick-nav" onclick="giveCategories(this.innerHTML)">U</div>
+            <div class="btn-quick-nav" onclick="giveCategories(this.innerHTML)">V</div>
+            <div class="btn-quick-nav" onclick="giveCategories(this.innerHTML)">W</div>
+            <div class="btn-quick-nav" onclick="giveCategories(this.innerHTML)">X</div>
+            <div class="btn-quick-nav" onclick="giveCategories(this.innerHTML)">Y</div>
+            <div class="btn-quick-nav" onclick="giveCategories(this.innerHTML)">Z</div>
+            <div class="btn-quick-nav-all" style="float: right;"
+            onclick="giveCategories(this.innerHTML)">All</div>
+        </div>
+
+        <!--                                                  -->
+        <!-- ~~~~~~~~~~~~~~~ COURSE GROUP NAV ~~~~~~~~~~~~~~~ -->
+        <!--                                                  -->
+
+        <div class="board full">
+            <div id="course-group-container" class="pane full">
+
+            </div>
+        </div>
+
+        <!--                                                         -->
+        <!-- ~~~~~~~~~~~~~~~ COURSE BUTTON CONTAINER ~~~~~~~~~~~~~~~ -->
+        <!--             <div class="btn-campus" onclick="showSidenav(this, 'campus')" style="width: calc(25% - 12px);">ACCTG 100</div>                                            -->
+
+        <div class="board full">
+            <div id="buttonContainer" class="pane full">
+
+
+
+            </div>
+        </div>
+
+        <!--                                                 -->
+        <!-- ~~~~~~~~~~~~~~~ COURSE SIDE-NAV ~~~~~~~~~~~~~~~ -->
+        <!--                                                 -->
+
+        <!-- Translucent div that covers that page when the sidenav is visible -->
+        <div id="sidenav-closer" onclick="hideSidenav()" style="display:none;"></div>
+
+        <!-- Course sidenav bar -->
+        <div id="mySidenav" class="sidenav">
+
+            <!-- Sidenav title (changes with the buttons you click on) -->
+            <h2 id="sidenav-title" class="center-text">Potato</h2>
+
+            <!-- Button to open all sections and reference at once -->
+            <div id="btn-all" class="btn-openAll" onclick="openAll()">
+                <span class="center-text">Open All</span>
+            </div>
+
+            <div id="multi-section"></div>
+
+            <div id="section-button-container"></div>
+
+        </div>
+
+        <!--                                                   -->
+        <!-- ~~~~~~~~~~~~~~~ SETTINGS SIDE-NAV ~~~~~~~~~~~~~~~ -->
+        <!--                                                   -->
+
+        <div id="settingsSidenav" class="sidenav">
+            <h2 id="settings-title">Settings</h2>
+
+            <!--                                               -->
+            <!-- ~~~~~~~~~~~~~~~ COURSE FILTER ~~~~~~~~~~~~~~~ -->
+            <!--                                               -->
+            <h1 style="margin:10px;">Filter</h1>
+
+            <div class="settingsContainer">
+                <label class="switch">
+                  <input type="checkbox" id="campusToggle" onclick="reset()" checked>
+                  <div class="slider round"></div>
+                </label>
+                <div class="setting">
+                    Campus
+                </div>
+            </div>
+
+            <div class="settingsContainer">
+                <label class="switch">
+                  <input type="checkbox" id="onlineToggle" onclick="reset()" checked>
+                  <div class="slider round"></div>
+                </label>
+                <div class="setting">
+                    Online
+                </div>
+            </div>
+
+            <div class="settingsContainer">
+                <label class="switch">
+                  <input type="checkbox" id="pathwayToggle" onclick="reset()" checked>
+                  <div class="slider round"></div>
+                </label>
+                <div class="setting">
+                    Pathway
+                </div>
+            </div>
+
+            <!--<div class="settingsContainer">
+            <label class="switch">
+                <input type="checkbox" id="pilotToggle" onclick="reset()">
+                <div class="slider round"></div>
+              </label>
+            <div class="setting">
+                Pilots
+            </div>
+          </div>-->
+        </div>
+    </div>
+</body>

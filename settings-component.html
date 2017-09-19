@@ -1,0 +1,170 @@
+<head>
+    <meta name="viewport" charset="UTF-8" http-equiv="X-UA-Compatible">
+    <title>
+        Course Navigation
+    </title>
+
+    <!-- Script Files -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="papaparse.min.js"></script>
+    <script type="text/javascript" src="navigation.js"></script>
+    <script type="text/javascript" src="settings.js"></script>
+    <script type="text/javascript" src="infoFactory.js"></script>
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="https://www.w3schools.com/lib/w3.css">
+    <link rel="stylesheet" href="navstyle.css">
+
+</head>
+
+<h2 id="settings-title">Settings</h2>
+
+  <!--                                               -->
+  <!-- ~~~~~~~~~~~~~~~ COURSE FILTER ~~~~~~~~~~~~~~~ -->
+  <!--                                               -->
+<h1 style="margin:10px;">Filter</h1>
+
+<div class="settingsContainer">
+    <label class="switch">
+        <input type="checkbox" id="campusToggle" onclick="reset()" checked>
+        <div class="slider round"></div>
+      </label>
+    <div class="setting">
+        Campus
+    </div>
+</div>
+
+<div class="settingsContainer">
+    <label class="switch">
+        <input type="checkbox" id="onlineToggle" onclick="reset()" checked>
+        <div class="slider round"></div>
+      </label>
+    <div class="setting">
+        Online
+    </div>
+</div>
+
+<div class="settingsContainer">
+    <label class="switch">
+        <input type="checkbox" id="pathwayToggle" onclick="reset()" checked>
+        <div class="slider round"></div>
+      </label>
+    <div class="setting">
+        Pathway
+    </div>
+</div>
+
+<div class="settingsContainer">
+  <label class="switch">
+      <input type="checkbox" id="pilotToggle" onclick="reset()">
+      <div class="slider round"></div>
+    </label>
+  <div class="setting">
+      Pilots
+  </div>
+</div>
+
+  <!--                                                -->
+  <!-- ~~~~~~~~~~~~~~~ COLUMNS FORMAT ~~~~~~~~~~~~~~~ -->
+  <!--                                                -->
+<!--
+  <h1 style="margin:10px;">Columns</h1>
+
+  <div class="settingsContainer">
+    <label class="switch">
+      <input type="checkbox" id="col1" onclick="setColumns(this);">
+      <div class="slider round"></div>
+    </label>
+    <div class="setting">
+      1
+    </div>
+  </div>
+
+  <div class="settingsContainer">
+    <label class="switch">
+      <input type="checkbox" id="col2" onclick="setColumns(this);" checked>
+      <div class="slider round"></div>
+    </label>
+    <div class="setting">
+      2
+    </div>
+  </div>
+
+  <div class="settingsContainer">
+    <label class="switch">
+      <input type="checkbox" id="col3" onclick="setColumns(this);">
+      <div class="slider round"></div>
+    </label>
+    <div class="setting">
+      3
+    </div>
+  </div>
+
+  <div class="settingsContainer">
+    <label class="switch">
+      <input type="checkbox" id="col4" onclick="setColumns(this);">
+      <div class="slider round"></div>
+    </label>
+    <div class="setting">
+      4
+    </div>
+  </div>
+-->
+  <!--                                                 -->
+  <!-- ~~~~~~~~~~~~~~~ SEMESTER FILTER ~~~~~~~~~~~~~~~ -->
+  <!--                                                 -->
+
+  <!--
+  <h1 style="margin-left:10px;margin-top:10px;">Semester</h1>
+
+    <div class="settingsContainer">
+      <label class="switch">
+        <input type="checkbox" id="col4" onclick="setColumns(this);">
+        <div class="slider round"></div>
+      </label>
+      <div class="setting">
+        Fall 2016
+      </div>
+    </div>
+
+    <div class="settingsContainer">
+      <label class="switch">
+        <input type="checkbox" id="col4" onclick="setColumns(this);">
+        <div class="slider round"></div>
+      </label>
+      <div class="setting">
+        Winter 2017
+      </div>
+    </div>
+
+    <div class="settingsContainer">
+      <label class="switch">
+        <input type="checkbox" id="col4" onclick="setColumns(this);" checked>
+        <div class="slider round"></div>
+      </label>
+      <div class="setting">
+        Spring 2017
+      </div>
+    </div>
+
+    <div class="settingsContainer">
+      <label class="switch">
+        <input type="checkbox" id="col4" onclick="setColumns(this);">
+        <div class="slider round"></div>
+      </label>
+      <div class="setting">
+        Summer 2017
+      </div>
+    </div>
+
+    <div class="settingsContainer">
+      <label class="switch">
+        <input type="checkbox" id="col4" onclick="setColumns(this);">
+        <div class="slider round"></div>
+      </label>
+      <div class="setting">
+        Fall 2017
+      </div>
+    </div>
+  -->
+  </div>
