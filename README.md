@@ -1,5 +1,6 @@
 # Course Navigation Tool
 Written by Zach Williams and Sam McGrath
+Developed May 2017
 
 This tool was developed for Course Support to help the employees complete tickets more efficiently. In essence, this tool
 parses through the CSV files and then creates a web page filled with dynamically created buttons. This allows the user to
